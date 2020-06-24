@@ -15,7 +15,7 @@ public class MyLectorPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
-            String message = args.getString(0);
+            String message = "Hola mundo de Costa Rica a Nicaragua :)";
             this.coolMethod(message, callbackContext);
             return true;
         }
