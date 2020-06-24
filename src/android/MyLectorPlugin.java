@@ -15,7 +15,14 @@ public class MyLectorPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
-            String message = "Hola mundo de Costa Rica a Nicaragua :)";
+            String message = "Hola mundo de Costa Rica a Nicaragua 2 :)";
+
+            final static int PORT = 0x096e; 
+            PcscServer pcscServer = new PcscServer(PORT,MainActivity.this, mHandler);
+                            ftReader = pcscServer.getFtReaderObject();
+            new Tpcsc().testA(PORT);
+
+
             this.coolMethod(message, callbackContext);
             return true;
         }
