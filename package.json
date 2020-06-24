@@ -1,0 +1,17 @@
+{
+  "name": "cordova-my-lector-plugin",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "cordova-my-lector-plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}

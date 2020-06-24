@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-my-lector-plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<name>MyLectorPlugin</name>
+<js-module name="MyLectorPlugin" src="www/MyLectorPlugin.js">
+<clobbers target="cordova.plugins.MyLectorPlugin" />
+</js-module>
+
+<platform name="android">
+<config-file parent="/*" target="res/xml/config.xml">
+<feature name="MyLectorPlugin">
+<param name="android-package" value="com.mylectorplugin.MyLectorPlugin" />
+</feature>
+</config-file>
+
+<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+
+<source-file src="src/android/MyLectorPlugin.java" target-dir="src/com/mylectorplugin"/>
+
+ <lib-file src="src/android/lib/ftsafe_0.7.04.jar" />
+
+</platform>
+
+</plugin>
