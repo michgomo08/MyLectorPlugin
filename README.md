@@ -2,4 +2,4 @@
 
 ## Prueba leer lector
 
-Plugin para leer lector.git status
+Plugin para leer lector.
