@@ -7,6 +7,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+import android.os.Message;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -15,13 +18,31 @@ public class MyLectorPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
+
+
             String message = "Hola mundo de Costa Rica a Nicaragua 2 :)";
 
-            final static int PORT = 0x096e; 
-            PcscServer pcscServer = new PcscServer(PORT,MainActivity.this, mHandler);
-                            ftReader = pcscServer.getFtReaderObject();
-            new Tpcsc().testA(PORT);
+            final Handler mHandler = new Handler(){
+                @Override
+                public void handleMessage(Message msg){
+                    super.handleMessage(msg);
+                    message += "---- entro al handler ---";
+                    switch (msg.what) {
+                        case 0:
+                        String log = msg.obj.toString();
+                        message +="LOG---------->"+log;
+                        break;
+                    }
+                }
+            };
 
+            mHandler.sendMessage(mHandler.obtainMessage(0, "Prueba"));
+/*
+            int PORT = 0x096e; 
+            PcscServer pcscServer = new PcscServer(PORT,MyLectorPlugin.this, mHandler);
+            ftReader = pcscServer.getFtReaderObject();
+            new Tpcsc().testA(PORT);
+*/
 
             this.coolMethod(message, callbackContext);
             return true;
