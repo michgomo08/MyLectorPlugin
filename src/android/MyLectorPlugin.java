@@ -15,13 +15,13 @@ import com.ftsafe.PcscServer;
  * This class echoes a string called from JavaScript.
  */
 public class MyLectorPlugin extends CordovaPlugin {
-
+    String message ="";
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
 
 
-            String message = "Hola mundo de Costa Rica a Nicaragua 2 :)";
+            message = "Hola mundo de Costa Rica a Nicaragua 2 :)";
 
             final Handler mHandler = new Handler(){
                 @Override
