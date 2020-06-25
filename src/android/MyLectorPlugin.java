@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import android.os.*;
 import com.ftsafe.PcscServer;
+import com.ftsafe.readerScheme.FTReader;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -21,7 +22,7 @@ public class MyLectorPlugin extends CordovaPlugin {
         if (action.equals("coolMethod")) {
 
 
-            message = "Hola mundo de Costa Rica a Nicaragua 2 :)";
+            message = "Hola mundo de Costa Rica a Nicaragua 3 :)";
 
             final Handler mHandler = new Handler(){
                 @Override
@@ -38,12 +39,12 @@ public class MyLectorPlugin extends CordovaPlugin {
             };
 
             mHandler.sendMessage(mHandler.obtainMessage(0, "Prueba"));
-/*
+
             int PORT = 0x096e; 
             PcscServer pcscServer = new PcscServer(PORT,MainActivity.this, mHandler);
-            ftReader = pcscServer.getFtReaderObject();
+            FTReader  ftReader = pcscServer.getFtReaderObject();
             new Tpcsc().testA(PORT);
-*/
+
 
             this.coolMethod(message, callbackContext);
             return true;
