@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import android.os.*;
 import com.ftsafe.PcscServer;
 import com.ftsafe.readerScheme.FTReader;
+import com.example.ftReaderStandard.Tpcsc;
 
 /**
  * This class echoes a string called from JavaScript.
