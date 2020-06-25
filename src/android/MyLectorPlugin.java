@@ -8,7 +8,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import android.os.Message;
+import android.os.*;
+import com.ftsafe.PcscServer;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -39,7 +40,7 @@ public class MyLectorPlugin extends CordovaPlugin {
             mHandler.sendMessage(mHandler.obtainMessage(0, "Prueba"));
 /*
             int PORT = 0x096e; 
-            PcscServer pcscServer = new PcscServer(PORT,MyLectorPlugin.this, mHandler);
+            PcscServer pcscServer = new PcscServer(PORT,MainActivity.this, mHandler);
             ftReader = pcscServer.getFtReaderObject();
             new Tpcsc().testA(PORT);
 */
