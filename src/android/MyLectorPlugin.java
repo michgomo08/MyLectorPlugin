@@ -41,10 +41,11 @@ public class MyLectorPlugin extends CordovaPlugin {
             mHandler.sendMessage(mHandler.obtainMessage(0, "Prueba"));
 
             int PORT = 0x096e; 
-            PcscServer pcscServer = new PcscServer(PORT,MainActivity.this, mHandler);
+            PcscServer pcscServer = new PcscServer(PORT,this, mHandler);
+           /*
             FTReader  ftReader = pcscServer.getFtReaderObject();
             new Tpcsc().testA(PORT); 
-
+            */
 
             this.coolMethod(message, callbackContext);
             return true;
