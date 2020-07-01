@@ -11,6 +11,9 @@
 <param name="android-package" value="com.mylectorplugin.MyLectorPlugin" />
 </feature>
 </config-file>
+<config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <activity android:label="New Activity" android:name="com.mylectorplugin.NewActivity"></activity>
+</config-file>
 
 <config-file parent="/*" target="AndroidManifest.xml">
 <uses-feature android:name="android.hardware.usb.host" />
@@ -23,6 +26,8 @@
 </config-file>
 
 <source-file src="src/android/MyLectorPlugin.java" target-dir="src/com/mylectorplugin"/>
+<source-file src="src/android/NewActivity.java" target-dir="src/com/mylectorplugin"/>
+<source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
 
  <lib-file src="src/android/lib/ftsafe_0.7.04.jar" />
 
