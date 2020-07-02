@@ -1,9 +1,16 @@
 package com.mylectorplugin;
 
-import android.app.*;
-import android.os.*;
-import android.widget.*;
-import android.view.*;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.widget.TextView;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+
+import com.ftsafe.readerScheme.FTException;
+import com.ftsafe.readerScheme.FTReader;
 
 public class NewActivity extends Activity {
 
@@ -12,6 +19,8 @@ public class NewActivity extends Activity {
         super.onCreate(savedInstanceState);
         String package_name = getApplication().getPackageName();
         setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
+		
+		showLog("LibVersion:"+FTReader.readerGetLibVersion());
 
         findViewById(getResources().getIdentifier("button_conectar", "id", getPackageName())).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,9 +42,13 @@ public class NewActivity extends Activity {
                 case -1:
                     textView.setText("AAAAAAAAAAAAAAAAAAAAAAAAAA-08");
                     return;
-                }
+                case 0:
+                    log = msg.obj.toString();
+                    textView.append("LOG---------->"+log+"\n");
+                    break;	
             }
-        };
+        }
+    };
         
         private void showLog(String log){
             mHandler.sendMessage(mHandler.obtainMessage(0, log));
