@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+  
+<ScrollView  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"  
+    android:scrollbars="vertical"  
+    android:fadingEdge="vertical">  
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,21 +19,32 @@
     android:paddingTop="16dp"
     tools:context="com.mylectorplugin.NewActivity">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+   		android:layout_height="wrap_content">
+
    		
         <Button
-            android:id="@+id/button_conectar"
-	        android:text="Conectar"
+            android:id="@+id/button_limpiar"
+	        android:text="Limpiar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="8dp"/>
+        
+         <Button
+            android:id="@+id/button_salir"
+	        android:text="Salir"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="8dp"/>
 
-
+</LinearLayout>
 
         <View
             android:id="@+id/linea"
             android:layout_height="3px" 
             android:layout_width="match_parent"
-            android:layout_below="@id/button_conectar"
             android:background="#66CCFF"/>
         
 
@@ -34,7 +55,6 @@
             android:layout_below="@id/linea"
             android:text="hello_world" />
 
-
-
-
 </RelativeLayout>
+
+</ScrollView> 

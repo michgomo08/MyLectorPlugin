@@ -22,10 +22,20 @@ public class NewActivity extends Activity {
 		
 		showLog("LibVersion:"+FTReader.readerGetLibVersion());
 
-        findViewById(getResources().getIdentifier("button_conectar", "id", getPackageName())).setOnClickListener(new View.OnClickListener() {
+        
+        
+        
+        findViewById(getResources().getIdentifier("button_limpiar", "id", getPackageName())).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 mHandler.sendMessage(mHandler.obtainMessage(-1, ""));
+            }
+        });
+
+        findViewById(getResources().getIdentifier("button_salir", "id", getPackageName())).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
     }
