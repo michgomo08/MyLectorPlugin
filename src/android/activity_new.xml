@@ -9,14 +9,32 @@
     android:paddingTop="16dp"
     tools:context="com.mylectorplugin.NewActivity">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="New Activity"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="77dp" />
+   		
+        <Button
+            android:id="@+id/button_conectar"
+	        android:text="Conectar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="8dp"/>
+
+
+
+        <View
+            android:id="@+id/linea"
+            android:layout_height="3px" 
+            android:layout_width="match_parent"
+            android:layout_below="@id/button_conectar"
+            android:background="#66CCFF"/>
+        
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linea"
+            android:text="hello_world" />
+
+
+
+
 </RelativeLayout>
