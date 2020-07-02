@@ -12,7 +12,7 @@
 </feature>
 </config-file>
 <config-file target="AndroidManifest.xml" parent="/manifest/application">
-    <activity android:label="New Activity" android:name="com.mylectorplugin.NewActivity"></activity>
+    <activity android:label="Lector" android:name="com.mylectorplugin.NewActivity"></activity>
 </config-file>
 
 <config-file parent="/*" target="AndroidManifest.xml">
