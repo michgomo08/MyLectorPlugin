@@ -35,7 +35,17 @@ public class NewActivity extends Activity {
         findViewById(getResources().getIdentifier("button_salir", "id", getPackageName())).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                android.os.Process.killProcess(android.os.Process.myPid());
+                //android.os.Process.killProcess(android.os.Process.myPid());
+
+                if(android.os.Build.VERSION.SDK_INT >= 21)
+                {
+                    finishAndRemoveTask();
+                }
+                else
+                {
+                    finish();
+                }
+
             }
         });
     }
@@ -50,7 +60,7 @@ public class NewActivity extends Activity {
 
             switch (msg.what) {
                 case -1:
-                    textView.setText("AAAAAAAAAAAAAAAAAAAAAAAAAA-08");
+                    textView.setText("");
                     return;
                 case 0:
                     log = msg.obj.toString();

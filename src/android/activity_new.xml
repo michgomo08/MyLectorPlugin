@@ -19,32 +19,31 @@
     android:paddingTop="16dp"
     tools:context="com.mylectorplugin.NewActivity">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-   		android:layout_height="wrap_content">
 
    		
         <Button
             android:id="@+id/button_limpiar"
 	        android:text="Limpiar"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textSize="8dp"/>
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+	        android:textSize="8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/button_salir" />
+ 
         
          <Button
             android:id="@+id/button_salir"
 	        android:text="Salir"
-	        android:layout_width="wrap_content"
+	        android:layout_width="96dp"
 	        android:layout_height="wrap_content"
-	        android:textSize="8dp"/>
-
-</LinearLayout>
+	        android:textSize="8dp"
+            android:layout_alignParentRight="true" />
 
         <View
             android:id="@+id/linea"
             android:layout_height="3px" 
             android:layout_width="match_parent"
+            android:layout_below="@id/button_limpiar"
             android:background="#66CCFF"/>
         
 
